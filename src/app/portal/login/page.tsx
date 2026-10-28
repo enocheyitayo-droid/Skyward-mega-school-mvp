@@ -1,14 +1,38 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BookOpen, MessageSquare, ShieldCheck, Users } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, ShieldCheck, Users, Sparkles } from "lucide-react";
 import { Campus } from "@/components/portal/campus";
-import { demoBabc } from "@/lib/babc/actions";
 import { babcDemoEnabled, currentAccount, homeFor } from "@/lib/babc/server";
-import { schoolRoleLabels, type SchoolRole } from "@/lib/babc/database";
 import { PortalSignIn } from "@/components/babc/portal-sign-in";
 import { Feedback } from "@/components/babc/ui";
-export const metadata = { title: "Portal login" };
-export default async function PortalLogin({searchParams}:{searchParams:Promise<{error?:string;success?:string}>}) {
-  const search=await searchParams,account=await currentAccount();
-  return <main id="main-content" className="babc-login"><section className="babc-login-story"><Link href="/" className="babc-brand"><Image src="/brand/babc-logo.png" alt="Bodija-Ashi Baptist College crest" width={58} height={58} priority/><span><strong>Bodija-Ashi<br/>Baptist College</strong><small>Faith, Excellence & Integrity</small></span></Link><div className="babc-login-message"><span className="babc-kicker">Our school. One community.</span><h1>Great schools<br/>work together.</h1><p>From the principal’s desk to every student’s progress. Teaching, school administration, and finance in one connected portal.</p><Campus/><div className="babc-login-values"><span><BookOpen size={17}/> Learn with purpose</span><span><Users size={17}/> Work as one</span><span><MessageSquare size={17}/> Stay connected</span></div></div><footer>Bodija-Ashi Baptist College, Ibadan <span>Faith, Excellence & Integrity.</span></footer></section><section className="babc-login-form"><div className="babc-login-top"><ShieldCheck size={16}/> Staff & student portal</div><div className="babc-login-card"><span className="babc-pill">Welcome to BABC</span><h2>Your school day,<br/>all in one place.</h2><p>Staff: use your school email. Students: use your admission number and your surname in CAPITAL LETTERS as your password.</p><Feedback {...search}/>{account&&<Link className="babc-account-return" href={homeFor(account.role)}>Continue as {account.name} <ArrowRight size={14}/></Link>}<PortalSignIn showDemo={babcDemoEnabled()}/><p className="babc-student-signup">New student? <Link href="/portal/signup">Activate your student account</Link></p>{babcDemoEnabled()&&<><div className="babc-demo-divider"><span>Explore with fictional school records</span></div><form action={demoBabc} className="babc-demo-login"><label className="babc-sr" htmlFor="demo-entry-role">Choose a demonstration role</label><select id="demo-entry-role" name="role" defaultValue="principal">{(["principal","ict","bursar","academic_lead","teacher","student"] as SchoolRole[]).map(role=><option value={role} key={role}>{schoolRoleLabels[role]}</option>)}</select><button className="babc-btn babc-primary">Explore demo <ArrowRight size={16}/></button></form><small className="babc-demo-note">Shared fictional records for exploring the school portal.<br/>Demo payments do not move real money.</small></>}</div><footer>ICT manages staff accounts and student activation.<br/><span>For an account or password assistance, contact ICT.</span></footer></section></main>;
+
+export const metadata = { title: "Welcome | SKYWARD MEGA SCHOOL" };
+
+export default async function PortalLogin({ searchParams }: { searchParams: Promise<{ error?: string; success?: string }> }) {
+  const search = await searchParams;
+  const account = await currentAccount();
+  return <main id="main-content" className="sms-entry">
+    <header className="sms-entry-header">
+      <Link href="/" className="sms-wordmark"><Image src="/brand/sms-mark.svg" alt="SMS monogram" width={46} height={46} priority/><span><strong>SKYWARD MEGA SCHOOL</strong><small>School management portal</small></span></Link>
+      <span className="sms-secure"><ShieldCheck size={16}/> Your school, securely connected</span>
+    </header>
+    <div className="sms-entry-layout">
+      <section className="sms-entry-cover" aria-label="Welcome to Skyward Mega School">
+        <div className="sms-cover-copy"><span className="sms-school-stage"><span/>Nursery, primary & secondary</span><h1>One school.<br/>So many<br/>possibilities.</h1><p>A connected place for the people<br className="sms-desktop-break"/> who make every school day count.</p></div>
+        <div className="sms-campus-scene"><div className="sms-campus-orbit"/><div className="sms-floating-label sms-label-learning"><BookOpen size={19}/><span>Room to learn.</span></div><Campus/><div className="sms-floating-label sms-label-growing"><Sparkles size={18}/><span>Space to grow.</span></div></div>
+        <div className="sms-cover-footer"><span><GraduationCap size={18}/> Every student. Every step.</span><span>SMS</span></div>
+      </section>
+      <section className="sms-entry-access" aria-label="Sign in">
+        <div className="sms-access-content"><span className="sms-access-icon"><Users size={23}/></span><h2>Welcome back.</h2><p className="sms-access-description">Your school day starts here.<br/>Sign in to your Skyward workspace.</p>
+          <Feedback {...search}/>
+          {account && <Link className="sms-resume" href={homeFor(account.role)}>Continue as {account.name}<ArrowRight size={16}/></Link>}
+          <PortalSignIn showDemo={babcDemoEnabled()}/>
+          <div className="sms-activate"><span>Joining us for the first time?</span><Link href="/portal/signup">Activate student account <ArrowRight size={14}/></Link></div>
+          <details className="sms-login-help"><summary>Need help signing in?</summary><p>Staff: use your school email and password. Students: use your admission number and your surname in CAPITAL LETTERS. Contact school ICT if you need help with your account.</p></details>
+        </div>
+        <p className="sms-access-footer"><ShieldCheck size={14}/> A private workspace for your school community.</p>
+      </section>
+    </div>
+    <footer className="sms-entry-footer"><span>© {new Date().getFullYear()} Skyward Mega School</span><span>Learning. People. Possibilities.</span></footer>
+  </main>;
 }

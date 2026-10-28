@@ -1,6 +1,6 @@
 import { CheckCircle2, Info } from "lucide-react";
 import { schoolAction } from "@/lib/babc/actions";
-export function Heading({title,description,action}:{title:string;description:string;action?:React.ReactNode}) { return <div className="babc-heading"><div><div className="babc-greeting">Bodija-Ashi Baptist College</div><h1>{title}<span className="babc-heading-dot">.</span></h1><p>{description}</p></div>{action}</div>; }
+export function Heading({title,description,action}:{title:string;description:string;action?:React.ReactNode}) { return <div className="babc-heading"><div><div className="babc-greeting">SKYWARD MEGA SCHOOL</div><h1>{title}<span className="babc-heading-dot">.</span></h1><p>{description}</p></div>{action}</div>; }
 export function Panel({title,description,children,action}:{title:string;description?:string;children:React.ReactNode;action?:React.ReactNode}) {return <section className="babc-panel"><div className="babc-panel-heading"><div><h2>{title}</h2>{description&&<p className="babc-panel-description">{description}</p>}</div>{action}</div>{children}</section>;}
 export function Feedback({error,success}:{error?:string;success?:string}) { return <>{error&&<p className="babc-error" role="alert">{error==="permission"?"That section is not available to your role.":error}</p>}{success&&<p className="babc-success" role="status"><CheckCircle2 size={17}/>{success}</p>}</>; }
 export function Note({children}:{children:React.ReactNode}){return <div className="babc-info"><Info size={18}/><p>{children}</p></div>;}

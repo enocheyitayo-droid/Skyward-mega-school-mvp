@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 export const metadata: Metadata = {
-  title: { default: "BABC | School portal", template: "%s | BABC" },
-  description: "The staff collaboration and academic portal for Bodija-Ashi Baptist College, Ibadan.",
+  title: { default: "SMS | School portal", template: "%s | SMS" },
+  description: "The staff collaboration and academic portal for SKYWARD MEGA SCHOOL.",
   robots: { index: false, follow: false },
 };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
