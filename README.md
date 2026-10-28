@@ -1,6 +1,6 @@
 # SKYWARD MEGA SCHOOL (SMS)
 
-School management MVP with a responsive pink, black, and white interface.
+School management MVP with a responsive navy blue, teal, and white interface.
 
 ## Run locally
 

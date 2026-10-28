@@ -6,7 +6,7 @@ export const branding = {
   timezone: "Africa/Lagos",
   currency: "NGN",
   // Palette informed by the supplied screenshot; not an official brand guide.
-  navy: "#171717",
-  purple: "#c91864",
-  gold: "#f7c6db",
+  navy: "#17324d",
+  purple: "#087f8c",
+  gold: "#bce3de",
 };

@@ -1,0 +1,137 @@
+/* Shared school palette. Keep the reference's clear sidebar and panel hierarchy. */
+.babc-app,
+.babc-login {
+  --school-accent: #087f8c;
+  --school-ink: #17324d;
+  --school-muted: #5b7083;
+  --school-line: #e0e9ee;
+  --b-red: var(--school-accent);
+  --b-red-light: #e6f5f3;
+  --b-ink: var(--school-ink);
+  --b-muted: var(--school-muted);
+  --b-line: var(--school-line);
+  color: var(--school-ink);
+  background: #f5f9fc;
+  font-family: "Aptos", "Segoe UI", sans-serif;
+}
+
+.babc-modern .babc-sidebar {
+  background: #17324d;
+  color: #fff;
+}
+
+.babc-modern .babc-sidebar .babc-brand strong { color: #fff; }
+.babc-modern .babc-sidebar .babc-brand small { color: #bdcdda; }
+.babc-modern .babc-sidebar .babc-brand img {
+  background: #fff;
+  padding: 3px;
+}
+.babc-modern .babc-workspace-switch {
+  background: #213f59;
+  color: #fff;
+  border: 1px solid #36556f;
+}
+.babc-modern .babc-workspace-switch small { color: #bdcdda; }
+.babc-modern .babc-school-mini { background: #bce3de; color: #17324d; }
+.babc-modern .babc-sidebar .babc-nav-item { color: #d9e5ee !important; }
+.babc-modern .babc-sidebar .babc-nav-item:hover { background: #294a65; color: #fff !important; }
+.babc-modern .babc-sidebar .babc-nav-item.active {
+  background: var(--school-accent);
+  color: #fff !important;
+  box-shadow: inset 3px 0 #bce3de;
+}
+.babc-modern .babc-sidebar .babc-more-tools > summary,
+.babc-modern .babc-role-help,
+.babc-modern .babc-sidebar-footer { color: #b3c7d6; }
+.babc-modern .babc-sidebar-footer { border-color: #36556f; }
+
+.babc-modern .babc-topbar { border-bottom: 1px solid var(--school-line); }
+.babc-modern .babc-avatar { background: #bce3de; color: #17324d; }
+.babc-modern .babc-header-search { background: #f5f9fc; }
+.babc-modern .babc-header-search button { background: #bce3de; color: #17324d; }
+.babc-modern .babc-header-bell::after { background: var(--school-accent); }
+.babc-modern .babc-dash-panel,
+.babc-modern .babc-dashboard-rail,
+.babc-modern .babc-attention,
+.babc-modern .babc-panel,
+.babc-modern .babc-home-task { border: 1px solid var(--school-line); box-shadow: none; }
+.babc-modern .babc-dash-stats > :is(a, div) {
+  background: #fff;
+  color: #17324d;
+  border: 1px solid var(--school-line);
+  border-top: 3px solid #bce3de;
+}
+.babc-modern .babc-dash-stats > :nth-child(2) { background: #e6f5f3; }
+.babc-modern .babc-dash-stats > :nth-child(3) { border-top-color: #17324d; }
+.babc-modern .babc-dash-stats > a.blue {
+  background: var(--school-accent);
+  border-color: var(--school-accent);
+  color: #fff;
+}
+.babc-modern .babc-dash-stats > :is(a, div) > span { color: var(--school-accent); }
+.babc-modern .babc-dash-stats > a.blue > span { color: #fff; }
+.babc-modern .babc-dash-legend > span:nth-child(2) i,
+.babc-modern .babc-class-bars > div:nth-child(even) i,
+.babc-modern .babc-attendance-track i:first-child { background: #17324d; }
+.babc-modern .babc-dash-school-note { background: #17324d; }
+.babc-modern .babc-dash-school-note > svg { color: #93d5cf; }
+.babc-modern .babc-dash-school-note p { color: #d9e5ee; }
+
+/* Apply the same identity to forms, access screens, and the sign-in page. */
+.babc-app .babc-primary,
+.babc-login .babc-primary { background: var(--school-accent); color: #fff; }
+.babc-app .babc-primary:hover,
+.babc-login .babc-primary:hover { background: #086b76 !important; }
+.babc-app .babc-dark { background: #17324d; color: #fff; }
+.babc-app .babc-tabs > a.selected { color: var(--school-accent); border-color: var(--school-accent); }
+.babc-app .babc-choice-icon,
+.babc-app .babc-subject-icon,
+.babc-app .babc-pill,
+.babc-login .babc-pill { background: #e6f5f3; color: #086b76; }
+.babc-app .babc-class-context,
+.babc-app .babc-form-teacher-card,
+.babc-app .babc-student-welcome { background: #e6f5f3; color: #354f63; }
+.babc-login { background: #fff; }
+.babc-login .babc-login-story { background: #17324d; color: #fff; }
+.babc-login .babc-brand strong,
+.babc-login h1 { color: #fff; }
+.babc-login h1 { font-family: "Aptos", "Segoe UI", sans-serif; font-weight: 650; }
+.babc-login .babc-brand img { background: #fff; padding: 3px; }
+.babc-login .babc-brand small,
+.babc-login .babc-login-message > p,
+.babc-login .babc-login-values > span,
+.babc-login .babc-login-story > footer { color: #bdcdda; }
+.babc-login .babc-kicker,
+.babc-login .babc-login-values svg { color: #93d5cf; }
+.babc-login h2 { color: #17324d; font-family: "Aptos", "Segoe UI", sans-serif; font-weight: 650; }
+.babc-login .babc-login-card > p,
+.babc-login .babc-login-top,
+.babc-login .babc-login-form > footer,
+.babc-login .babc-login-form > footer span,
+.babc-login .babc-login-fields label,
+.babc-login .babc-login-fields > p { color: #5b7083; }
+.babc-login .babc-login-fields input { border-color: #d7e3eb; color: #17324d; background: #fff; }
+.babc-login .babc-login-fields input::placeholder { color: #7b8e9f; }
+.babc-login .babc-demo-login select { color: #354f63; border-color: #d7e3eb; }
+.babc-login .babc-demo-credentials { background: #f5f9fc; border-color: #e0e9ee; }
+.babc-login .babc-demo-credentials > p strong,
+.babc-login .babc-demo-account svg { color: var(--school-accent); }
+.babc-login .babc-demo-account { border-color: #e0e9ee; }
+.babc-login .babc-demo-account:hover { background: #e6f5f3; }
+.babc-login .babc-demo-account strong { color: #17324d; }
+.babc-login .babc-demo-account code,
+.babc-login .babc-demo-selected { color: #5b7083; }
+.babc-app :is(a, button, input, select, textarea, summary):focus-visible,
+.babc-login :is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid #087f8c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 780px) {
+  .babc-modern .babc-mobile-nav a { background: #fff; color: #354f63; border: 1px solid var(--school-line); }
+  .babc-modern .babc-mobile-nav a.selected { background: var(--school-accent); color: #fff; border-color: var(--school-accent); }
+}
+
+@media print {
+  .babc-app, .babc-modern .babc-workspace { background: #fff; color: #000; }
+}
