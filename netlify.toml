@@ -9,4 +9,6 @@
   node_bundler = "esbuild"
   external_node_modules = ["pg", "@netlify/database"]
 
-# The Next.js adapter is detected automatically by Netlify.
+# Explicit registration also supports projects linked through the Netlify API.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
